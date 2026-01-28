@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React from 'react';
 import { Header } from './components/Layout/Header';
 import { Footer } from './components/Layout/Footer';
 import { Hero } from './components/Sections/Hero';
@@ -10,45 +10,13 @@ import { Branding } from './components/Sections/Branding';
 import { Comparison } from './components/Sections/Comparison';
 import { Investment } from './components/Sections/Investment';
 import { ProposalPdfTemplate } from './components/PDF/ProposalPdfTemplate';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const mainRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    const sections = gsap.utils.toArray<HTMLElement>('.pdf-section');
-
-    sections.forEach((section) => {
-      gsap.fromTo(
-        section,
-        {
-          opacity: 0,
-          y: 30,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 90%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
-    });
-  }, { scope: mainRef });
-
   return (
     <div className="min-h-screen bg-slate-950 font-sans selection:bg-primary selection:text-white relative">
       <Header />
 
-      <main id="proposal-content" ref={mainRef}>
+      <main id="proposal-content">
         <div className="pdf-section">
           <Hero />
         </div>
