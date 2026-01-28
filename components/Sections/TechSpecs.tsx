@@ -51,8 +51,8 @@ export const TechSpecs: React.FC = () => {
                   desc: "Milhares de acessos simultâneos sem cair."
                 }
               ].map((item, i) => (
-                <div key={i} className="group glass-card p-4 sm:p-5 rounded-xl hover:border-primary/40 transition-all duration-300">
-                  <div className="space-y-2.5">
+                <div key={i} className="group glass-card p-4 sm:p-5 rounded-xl hover:border-primary/40 transition-all duration-300 text-center sm:text-left">
+                  <div className="space-y-2.5 flex flex-col items-center sm:items-start">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                       {item.icon}
                     </div>
