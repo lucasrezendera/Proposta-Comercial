@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
         {/* Value Proposition */}
         <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8 animate-fade-in-up text-center px-4" style={{ animationDelay: '0.6s' }}>
           <p className="text-lg sm:text-xl md:text-3xl text-slate-300 font-display leading-tight">
-            Transforme o evento em um <span className="text-white border-b-2 border-primary/40">ecossistema inteligente</span>.
+            Transforme o evento em um <br /><span className="text-white border-b-2 border-primary/40">ecossistema inteligente</span>.
           </p>
 
           <div className="flex items-center justify-center gap-4 sm:gap-6 pt-2">
