@@ -1,17 +1,18 @@
-import React from 'react';
-import { Header } from './components/Layout/Header';
-import { Footer } from './components/Layout/Footer';
-import { Hero } from './components/Sections/Hero';
-import { Diagnosis } from './components/Sections/Diagnosis';
-import { Solution } from './components/Sections/Solution';
-import { TechSpecs } from './components/Sections/TechSpecs';
-import { PreviewMockup } from './components/Sections/PreviewMockup';
-import { Branding } from './components/Sections/Branding';
-import { Comparison } from './components/Sections/Comparison';
-import { Investment } from './components/Sections/Investment';
-import { ProposalPdfTemplate } from './components/PDF/ProposalPdfTemplate';
+'use client'
 
-function App() {
+import { Header } from '@/components/Layout/Header'
+import { Footer } from '@/components/Layout/Footer'
+import { Hero } from '@/components/Sections/Hero'
+import { Diagnosis } from '@/components/Sections/Diagnosis'
+import { Solution } from '@/components/Sections/Solution'
+import { TechSpecs } from '@/components/Sections/TechSpecs'
+import { PreviewMockup } from '@/components/Sections/PreviewMockup'
+import { Branding } from '@/components/Sections/Branding'
+import { Comparison } from '@/components/Sections/Comparison'
+import { Investment } from '@/components/Sections/Investment'
+import { ProposalPdfTemplate } from '@/components/PDF/ProposalPdfTemplate'
+
+export default function Home() {
   return (
     <div className="min-h-screen bg-slate-950 font-sans selection:bg-primary selection:text-white relative">
       <Header />
@@ -43,11 +44,6 @@ function App() {
         </div>
       </main>
 
-      {/* 
-        Template de PDF: 
-        Usamos absolute e uma posição lateral extrema para garantir que o componente
-        esteja renderizado com sua altura real, permitindo que o html2pdf capture tudo.
-      */}
       <div
         className="absolute left-[-9999px] top-0 pointer-events-none opacity-0"
         style={{ width: '794px' }}
@@ -60,7 +56,5 @@ function App() {
         <Footer />
       </div>
     </div>
-  );
+  )
 }
-
-export default App;
