@@ -62,7 +62,7 @@ export const Header: React.FC = () => {
   return (
     <header className="fixed w-full z-50 transition-all duration-500 no-print top-0 pt-4 md:pt-6">
       <div className={`container mx-auto max-w-6xl px-4 md:px-6 transition-all duration-500 ${isScrolled ? 'max-w-5xl' : 'max-w-6xl'}`}>
-        <div className={`flex justify-between items-center transition-all duration-500 rounded-2xl px-4 py-3 md:px-8 md:py-4 ${isScrolled ? 'glass border border-white/10 shadow-2xl scale-95' : 'bg-transparent border border-transparent'}`}>
+        <div className={`flex justify-between items-center transition-all duration-500 rounded-2xl px-4 py-3 md:px-8 md:py-4 ${isScrolled ? 'glass border border-white/10 shadow-2xl scale-95 md:backdrop-blur-xl' : 'bg-transparent border border-transparent'}`}>
 
           {/* Logo Section */}
           <div className="flex items-center gap-4">

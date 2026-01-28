@@ -2,10 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Otimizações de performance */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   background-color: #020617;
   color: #f1f5f9;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Melhorar performance de scroll em iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Desabilitar animações pesadas em mobile */
+@media (max-width: 768px) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-pulse-slow,
+  .animate-float,
+  .animate-bounce {
+    animation: none !important;
+  }
+  
+  /* Remover blur pesado em mobile */
+  [class*="blur-["] {
+    filter: none !important;
+  }
+  
+  /* Simplificar backdrop-filter em mobile */
+  .glass,
+  .glass-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(15, 23, 42, 0.95) !important;
+  }
+  
+  /* Otimizar transformações */
+  * {
+    will-change: auto !important;
+  }
 }
 
 .bg-grid-pattern {

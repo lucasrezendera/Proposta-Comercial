@@ -9,9 +9,9 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
 
-      {/* Orbes de Luz Dinâmicos */}
-      <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full animate-pulse-slow pointer-events-none mix-blend-screen" />
-      <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-orange-600/10 blur-[100px] rounded-full animate-pulse-slow pointer-events-none delay-1000 mix-blend-screen" />
+      {/* Orbes de Luz Dinâmicos - Desabilitados em mobile */}
+      <div className="hidden md:block absolute top-1/4 -left-20 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full animate-pulse-slow pointer-events-none mix-blend-screen" />
+      <div className="hidden md:block absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-orange-600/10 blur-[100px] rounded-full animate-pulse-slow pointer-events-none delay-1000 mix-blend-screen" />
 
       <div className="container mx-auto max-w-6xl px-6 relative z-10 flex flex-col items-center py-20">
 

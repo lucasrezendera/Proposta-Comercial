@@ -50,8 +50,8 @@ export const Diagnosis: React.FC = () => {
           <div className="relative mt-8 md:mt-0">
             <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
 
-            <div className="relative glass p-8 rounded-[2rem] border border-white/5 flex flex-col items-center text-center gap-6 shadow-3xl">
-              <div className="w-20 h-20 glass-card rounded-2xl flex items-center justify-center border-primary/40 mb-1">
+            <div className="relative glass p-8 rounded-[2rem] border border-white/5 flex flex-col items-center text-center gap-6 shadow-3xl md:backdrop-blur-md">
+              <div className="w-20 h-20 glass-card rounded-2xl flex items-center justify-center border-primary/40 mb-1 md:backdrop-blur-sm">
                 <TrendingDown className="w-10 h-10 text-primary" />
               </div>
 
