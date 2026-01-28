@@ -3,46 +3,31 @@ import { Check, ArrowRight, FileText, BadgeCheck, ShieldCheck, Box, Zap } from '
 import { Button } from '../UI/Button';
 import { PLANS } from '../../constants';
 import { SectionId } from '../../types';
-import { motion } from 'framer-motion';
 
 export const Investment: React.FC = () => {
   return (
-    <section id={SectionId.INVESTMENT} className="py-16 bg-dark-950 relative w-full">
+    <section id={SectionId.INVESTMENT} className="py-16 bg-dark-950 relative">
       <div className="container mx-auto max-w-6xl px-6 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center font-mono"
-        >
+        <div className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center font-mono">
           <span className="text-primary text-sm font-bold tracking-tighter">07 // 08</span>
           <div className="h-px w-12 md:flex-1 bg-slate-800"></div>
           <span className="text-slate-500 text-[10px] tracking-widest uppercase">Investimento & Aprovação</span>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-12 space-y-3"
-        >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-white tracking-tighter">
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <h2 className="font-display text-5xl md:text-6xl font-bold text-white tracking-tighter">
             A DECISÃO ESTRATÉGICA:<br/>
             <span className="text-primary">INVESTIMENTO</span>
           </h2>
           <p className="text-slate-400 font-light text-lg">
              Transparência total para o crescimento da AMPEI.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {PLANS.map((plan, i) => (
-            <motion.div 
+          {PLANS.map((plan) => (
+            <div 
               key={plan.id} 
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2, duration: 0.8, type: "spring" }}
-              viewport={{ once: true }}
               className={`relative flex flex-col group transition-all duration-500 rounded-[2.5rem] overflow-hidden ${
                   plan.highlight 
                   ? 'glass-card border-primary ring-1 ring-primary/30 scale-105 z-10 shadow-2xl' 
@@ -105,7 +90,7 @@ export const Investment: React.FC = () => {
                     <span className="text-[9px] font-mono text-slate-700 uppercase tracking-widest">Contrato Digital // Validade: 15 Dias</span>
                   </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
         

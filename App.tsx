@@ -9,81 +9,45 @@ import { PreviewMockup } from './components/Sections/PreviewMockup';
 import { Branding } from './components/Sections/Branding';
 import { Comparison } from './components/Sections/Comparison';
 import { Investment } from './components/Sections/Investment';
-import { Results } from './components/Sections/Results';
-import { Services } from './components/Sections/Services';
 import { ProposalChat } from './components/Features/ProposalChat';
 import { ProposalPdfTemplate } from './components/PDF/ProposalPdfTemplate';
-
-// Wrapper component to handle the "Sticky Card" effect
-interface StickySectionProps {
-  children?: React.ReactNode;
-  className?: string;
-}
-
-const StickySection: React.FC<StickySectionProps> = ({ children, className = "" }) => {
-  return (
-    <div className={`pdf-section lg:sticky-wrapper ${className}`}>
-      <div className="h-full w-full flex flex-col justify-center">
-        {children}
-      </div>
-    </div>
-  );
-};
 
 function App() {
   return (
     <div className="min-h-screen bg-slate-950 font-sans selection:bg-primary selection:text-white relative">
       <Header />
       
-      <main id="proposal-content" className="relative">
-        
-        {/* Hero doesn't need to be sticky, it's the base */}
-        <div className="pdf-section min-h-screen relative z-0">
+      <main id="proposal-content">
+        <div className="pdf-section">
           <Hero />
         </div>
-
-        {/* Stacked Sections */}
-        <StickySection className="z-10 bg-dark-950">
+        <div className="pdf-section">
           <Diagnosis />
-        </StickySection>
-        
-        <StickySection className="z-20 bg-dark-950">
+        </div>
+        <div className="pdf-section">
           <Solution />
-        </StickySection>
-        
-        <StickySection className="z-30 bg-dark-950">
+        </div>
+        <div className="pdf-section">
           <TechSpecs />
-        </StickySection>
-
-        <StickySection className="z-40 bg-dark-950">
-           <Services />
-        </StickySection>
-
-        <StickySection className="z-50 bg-dark-950">
-           <Results />
-        </StickySection>
-        
-        <StickySection className="z-[60] bg-dark-950">
+        </div>
+        <div className="pdf-section">
           <PreviewMockup />
-        </StickySection>
-        
-        <StickySection className="z-[70] bg-dark-900">
+        </div>
+        <div className="pdf-section">
           <Branding />
-        </StickySection>
-        
-        <StickySection className="z-[80] bg-dark-950">
+        </div>
+        <div className="pdf-section">
           <Comparison />
-        </StickySection>
-        
-        <StickySection className="z-[90] bg-dark-950">
+        </div>
+        <div className="pdf-section">
           <Investment />
-        </StickySection>
-
+        </div>
       </main>
 
       {/* 
         Template de PDF: 
-        Renderizado fora da visão para captura pelo html2pdf
+        Usamos absolute e uma posição lateral extrema para garantir que o componente
+        esteja renderizado com sua altura real, permitindo que o html2pdf capture tudo.
       */}
       <div 
         className="absolute left-[-9999px] top-0 pointer-events-none opacity-0" 
@@ -93,7 +57,7 @@ function App() {
         <ProposalPdfTemplate />
       </div>
 
-      <div className="no-print relative z-[100] bg-slate-950">
+      <div className="no-print">
         <Footer />
         <ProposalChat />
       </div>

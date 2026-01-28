@@ -1,31 +1,20 @@
 import React from 'react';
 import { Cpu, Lock, Zap, Layers, Terminal } from 'lucide-react';
 import { SectionId } from '../../types';
-import { motion } from 'framer-motion';
 
 export const TechSpecs: React.FC = () => {
   return (
-    <section id={SectionId.TECH_SPECS} className="py-16 bg-dark-950 border-y border-white/5 relative overflow-hidden w-full">
+    <section id={SectionId.TECH_SPECS} className="py-16 bg-dark-950 border-y border-white/5 relative overflow-hidden">
       <div className="container mx-auto max-w-6xl px-6">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row gap-4 mb-10 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left"
-        >
+        <div className="flex flex-col md:flex-row gap-4 mb-10 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left">
           <span className="text-primary text-sm font-bold tracking-tighter">04 // 08</span>
           <div className="h-px w-12 md:flex-1 bg-slate-800"></div>
           <span className="text-slate-500 text-[10px] tracking-widest uppercase">Tecnologia & Escalabilidade</span>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 text-center lg:text-left">
-            <motion.div
-               initial={{ opacity: 0, x: -20 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               transition={{ duration: 0.6 }}
-               viewport={{ once: true }}
-            >
+            <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-md text-[10px] font-mono text-primary mb-4 mx-auto lg:mx-0">
                 <div className="flex items-center gap-2">
                   <Terminal size={12} />
@@ -39,7 +28,7 @@ export const TechSpecs: React.FC = () => {
               <p className="text-slate-400 leading-relaxed font-light text-lg">
                 Diferente de sites comuns (Wordpress/Wix) que são lentos e inseguros, utilizaremos a mesma tecnologia usada pela Netflix, Uber e Twitch.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 text-left">
                {[
@@ -48,30 +37,17 @@ export const TechSpecs: React.FC = () => {
                  { icon: <Lock size={20} />, title: "SEGURANÇA TOTAL", desc: "Sem plugins vulneráveis. Blindado contra ataques comuns." },
                  { icon: <Layers size={20} />, title: "ESCALABILIDADE", desc: "Aguenta milhares de acessos simultâneos sem cair no dia do evento." }
                ].map((item, i) => (
-                 <motion.div 
-                   key={i} 
-                   initial={{ opacity: 0, y: 10 }}
-                   whileInView={{ opacity: 1, y: 0 }}
-                   transition={{ delay: 0.2 + (i * 0.1) }}
-                   viewport={{ once: true }}
-                   className="space-y-2 flex flex-col items-center sm:items-start text-center sm:text-left"
-                  >
+                 <div key={i} className="space-y-2 flex flex-col items-center sm:items-start text-center sm:text-left">
                    <div className="text-primary">{item.icon}</div>
                    <h4 className="text-white font-display font-bold text-sm tracking-widest uppercase">{item.title}</h4>
                    <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
-                 </motion.div>
+                 </div>
                ))}
             </div>
           </div>
 
           {/* Dossier List UI */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "circOut" }}
-            viewport={{ once: true }}
-            className="relative group mt-8 lg:mt-0"
-          >
+          <div className="relative group mt-8 lg:mt-0">
              <div className="absolute -inset-1 bg-gradient-to-b from-primary/30 to-transparent blur-xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
              <div className="relative glass border-white/5 rounded-3xl p-8 overflow-hidden">
                 <div className="flex justify-between items-center mb-6">
@@ -110,7 +86,7 @@ export const TechSpecs: React.FC = () => {
                    </div>
                 </div>
              </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

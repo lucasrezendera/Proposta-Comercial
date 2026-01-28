@@ -1,7 +1,6 @@
 import React from 'react';
 import { Check, Minus, ShieldCheck, Zap } from 'lucide-react';
 import { SectionId } from '../../types';
-import { motion } from 'framer-motion';
 
 export const Comparison: React.FC = () => {
   const features = [
@@ -17,45 +16,29 @@ export const Comparison: React.FC = () => {
   ];
 
   return (
-    <section id={SectionId.COMPARISON} className="py-16 bg-dark-950 relative overflow-hidden w-full">
+    <section id={SectionId.COMPARISON} className="py-16 bg-dark-950 relative overflow-hidden">
       {/* Elementos decorativos de fundo */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none opacity-50"></div>
       
       <div className="container mx-auto max-w-6xl px-6 relative z-10">
         {/* Padrão de cabeçalho de seção */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left"
-        >
+        <div className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left">
           <span className="text-primary text-sm font-bold tracking-tighter">06 // 08</span>
           <div className="h-px w-12 md:flex-1 bg-slate-800/50"></div>
           <span className="text-slate-500 text-[10px] tracking-widest uppercase">Scope Matrix Comparison</span>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 uppercase tracking-tighter">
+        <div className="text-center mb-10">
+          <h2 className="font-display text-5xl md:text-6xl font-bold text-white mb-4 uppercase tracking-tighter">
             ESCOPO <span className="text-primary">GERAL</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
             Comparativo detalhado entre os modelos de entrega para a evolução digital da AMPEI.
           </p>
-        </motion.div>
+        </div>
 
         {/* Tabela com visual Industrial/Moderno */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative max-w-5xl mx-auto"
-        >
+        <div className="relative max-w-5xl mx-auto">
           <div className="absolute -inset-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-3xl opacity-20 pointer-events-none"></div>
           
           <div className="glass-card rounded-3xl overflow-hidden border border-white/5 shadow-2xl">
@@ -132,7 +115,7 @@ export const Comparison: React.FC = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Legend / CTA Reforço */}
         <div className="mt-10 text-center">

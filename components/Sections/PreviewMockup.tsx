@@ -1,45 +1,28 @@
 import React from 'react';
 import { SectionId } from '../../types';
 import { MousePointer2, ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 export const PreviewMockup: React.FC = () => {
   return (
-    <section id={SectionId.PREVIEW} className="py-16 bg-dark-950 relative overflow-hidden w-full">
+    <section id={SectionId.PREVIEW} className="py-16 bg-dark-950 relative overflow-hidden">
       <div className="container mx-auto max-w-6xl px-6 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left"
-        >
+        <div className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left">
           <span className="text-primary text-sm font-bold tracking-tighter">04.1 // 08</span>
           <div className="h-px w-12 md:flex-1 bg-slate-800"></div>
           <span className="text-slate-500 text-[10px] tracking-widest uppercase">Visual Preview</span>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 uppercase tracking-tighter">
+        <div className="text-center mb-10">
+          <h2 className="font-display text-5xl md:text-6xl font-bold text-white mb-4 uppercase tracking-tighter">
             PROPOSTA DE <span className="text-primary">INTERFACE</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto font-light">
             Uma imersão visual no futuro portal da FEIND, respeitando a sobriedade industrial com tecnologia de ponta.
           </p>
-        </motion.div>
+        </div>
 
         {/* Laptop Mockup Container */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9, rotateX: 20 }}
-          whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
-          transition={{ duration: 1, ease: "circOut" }}
-          viewport={{ once: true }}
-          className="relative max-w-5xl mx-auto w-full px-2 md:px-0 perspective-1000"
-        >
+        <div className="relative max-w-5xl mx-auto w-full px-2 md:px-0">
           {/* Bezel / Screen */}
           <div className="relative rounded-t-xl md:rounded-t-[2rem] border-4 md:border-[12px] border-slate-800 bg-slate-900 shadow-2xl overflow-hidden aspect-video group">
             <div className="absolute inset-0 bg-[#000d1a]">
@@ -93,7 +76,7 @@ export const PreviewMockup: React.FC = () => {
           {/* Laptop Base */}
           <div className="relative h-2 md:h-4 w-full md:w-[110%] md:-left-[5%] bg-slate-700 rounded-b-xl md:rounded-b-2xl shadow-xl border-t border-slate-600 mt-[-1px]"></div>
           <div className="relative h-1 md:h-2 w-[30%] md:w-[20%] mx-auto bg-slate-800 rounded-b-lg"></div>
-        </motion.div>
+        </div>
 
         {/* Decorative Specs */}
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -103,17 +86,10 @@ export const PreviewMockup: React.FC = () => {
             { label: 'Visual Engine', value: 'Tailwind + Blue/Green' },
             { label: 'Componentry', value: 'Modular System' }
           ].map((spec, i) => (
-            <motion.div 
-              key={i} 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 + (i * 0.1) }}
-              viewport={{ once: true }}
-              className="text-center border-t border-slate-800 pt-4"
-            >
+            <div key={i} className="text-center border-t border-slate-800 pt-4">
               <div className="text-[10px] font-mono text-slate-600 uppercase tracking-widest mb-1">{spec.label}</div>
               <div className="text-sm font-display font-bold text-white uppercase">{spec.value}</div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
