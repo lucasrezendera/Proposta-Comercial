@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proposta Comercial | AMPEI - VELLO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#f97316', 
+              primaryDark: '#ea580c',
+              dark: {
+                950: '#020617',
+                900: '#0f172a',
+                800: '#1e293b',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 3s ease-in-out infinite',
+              'border-flow': 'border-flow 3s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              'border-flow': {
+                '0%': { 'background-position': '0% 50%' },
+                '100%': { 'background-position': '200% 50%' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #020617;
+        color: #f1f5f9;
+        overflow-x: hidden;
+      }
+      
+      .bg-grid-pattern {
+        background-size: 40px 40px;
+        background-image: linear-gradient(to right, rgba(249, 115, 22, 0.05) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+      }
+
+      .glass {
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .glass-card {
+        background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.8) 100%);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(249, 115, 22, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+      }
+
+      .glass-card:hover {
+        border-color: rgba(249, 115, 22, 0.4);
+        box-shadow: 0 0 30px rgba(249, 115, 22, 0.1);
+        transform: translateY(-5px);
+      }
+
+      .border-beam {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1.5px;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: 20;
+        opacity: 0.9;
+      }
+
+      .border-beam::before {
+        content: "";
+        position: absolute;
+        width: 160%;
+        height: 160%;
+        left: -30%;
+        top: -30%;
+        background: conic-gradient(from 0deg, transparent 0 240deg, #fb923c 310deg, #f97316 360deg);
+        animation: beam-rotate var(--duration, 4s) linear infinite;
+      }
+
+      @keyframes beam-rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      .text-glow {
+        text-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: #020617; }
+      ::-webkit-scrollbar-thumb { background: #334155; }
+      ::-webkit-scrollbar-thumb:hover { background: #f97316; }
+
+      @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
+
+      /* PDF Export Specific Rules */
+      .pdf-section {
+        page-break-after: always;
+        break-after: page;
+        min-height: auto; 
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden; 
+      }
+      
+      /* STICKY STACKING EFFECT (Desktop Only) */
+      @media (min-width: 1024px) {
+        .sticky-wrapper {
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          height: 100vh;
+          overflow: hidden;
+          background-color: #020617; /* Garante que cubra o anterior */
+          border-top: 1px solid rgba(255,255,255,0.05);
+          box-shadow: 0 -20px 50px rgba(0,0,0,0.5);
+        }
+      }
+
+      @media print {
+        .no-print { display: none !important; }
+        body { background: #020617 !important; }
+        .pdf-section { 
+          page-break-after: always !important; 
+          height: 100vh !important;
+          width: 100vw !important;
+          margin: 0 !important;
+          padding: 2rem !important; 
+        }
+        .glass-card, canvas, img {
+          page-break-inside: avoid !important;
+        }
+        /* Disable sticky for print */
+        .sticky-wrapper {
+            position: relative !important;
+            height: auto !important;
+            overflow: visible !important;
+            top: auto !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+    "recharts": "https://esm.sh/recharts@2.12.7?external=react,react-dom",
+    "lucide-react": "https://esm.sh/lucide-react@0.378.0?external=react,react-dom",
+    "@google/genai": "https://esm.sh/@google/genai@0.1.1",
+    "framer-motion": "https://esm.sh/framer-motion@11.0.8?external=react,react-dom"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

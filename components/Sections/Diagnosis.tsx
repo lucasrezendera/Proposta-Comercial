@@ -1,0 +1,110 @@
+import React from 'react';
+import { AlertTriangle, TrendingDown, Target, Activity } from 'lucide-react';
+import { SectionId } from '../../types';
+import { motion } from 'framer-motion';
+
+export const Diagnosis: React.FC = () => {
+  return (
+    <section id={SectionId.DIAGNOSIS} className="py-16 relative bg-dark-950 w-full">
+      <div className="container mx-auto max-w-6xl px-6">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left"
+        >
+          <span className="text-primary text-sm font-bold tracking-tighter">02 // 08</span>
+          <div className="h-px w-12 md:flex-1 bg-slate-800"></div>
+          <span className="text-slate-500 text-[10px] tracking-widest uppercase">Análise de Risco & Gargalos</span>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="space-y-6 text-center md:text-left">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-3"
+            >
+              <div className="inline-flex items-center gap-2 text-red-500 font-mono text-xs uppercase tracking-[0.2em] mx-auto md:mx-0">
+                <Activity size={14} />
+                Scanning Status: Vulnerabilidades Detectadas
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white leading-[1.1] uppercase">
+                O GARGALO <span className="text-primary">ATUAL</span>
+              </h2>
+              <p className="text-slate-400 leading-relaxed md:border-l-2 md:border-primary/20 md:pl-6 text-lg font-light pt-4 md:pt-0 border-t-2 border-primary/20 md:border-t-0">
+                Hoje, a Feira corre o risco de ser "apenas mais um evento". Sem tecnologia centralizada, enfrentamos três problemas críticos:
+              </p>
+            </motion.div>
+
+            <div className="grid gap-3 text-left">
+              {[
+                { title: "GESTÃO MANUAL", desc: "Venda de stands por planilha gera erros, conflitos de reserva e falta de dados financeiros.", icon: "01" },
+                { title: "EXPERIÊNCIA LIMITADA", desc: "Sem app oficial, o visitante se perde e o expositor perde oportunidades de conexão.", icon: "02" },
+                { title: "IDENTIDADE DEFASADA", desc: "A marca atual não reflete a inovação da indústria. É preciso modernizar.", icon: "03" }
+              ].map((item, i) => (
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 + (i * 0.1) }}
+                  viewport={{ once: true }}
+                  className="group glass-card p-5 rounded-2xl relative overflow-hidden hover:scale-[1.02] transition-transform"
+                >
+                   <div className="absolute top-0 right-0 p-4 text-slate-800 font-mono text-4xl font-bold opacity-20 group-hover:opacity-100 group-hover:text-primary transition-all pointer-events-none">
+                     {item.icon}
+                   </div>
+                   <h3 className="font-display font-bold text-white mb-1 flex items-center gap-3">
+                     <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                     {item.title}
+                   </h3>
+                   <p className="text-slate-400 text-sm max-w-[85%]">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="relative mt-8 md:mt-0"
+          >
+             <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
+             
+             <div className="relative glass p-8 rounded-[2rem] border border-white/5 flex flex-col items-center text-center gap-6 shadow-3xl">
+                <div className="w-20 h-20 glass-card rounded-2xl flex items-center justify-center border-primary/40 mb-1">
+                    <TrendingDown className="w-10 h-10 text-primary" />
+                </div>
+                
+                <div className="space-y-1">
+                  <div className="font-display text-7xl font-bold text-white tracking-tighter leading-none">
+                    -30%
+                  </div>
+                  <div className="text-primary font-mono font-bold uppercase tracking-[0.3em] text-xs">
+                    EFICIÊNCIA
+                  </div>
+                </div>
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
+
+                <p className="text-slate-400 text-sm max-w-xs leading-relaxed italic">
+                  "Custo invisível de processos manuais e falta de integração digital."
+                </p>
+
+                <div className="flex gap-2">
+                  <div className="w-1 h-1 bg-primary rounded-full"></div>
+                  <div className="w-1 h-1 bg-slate-700 rounded-full"></div>
+                  <div className="w-1 h-1 bg-slate-700 rounded-full"></div>
+                </div>
+             </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
