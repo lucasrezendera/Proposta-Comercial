@@ -40,19 +40,21 @@ export const Comparison: React.FC = () => {
         {/* Versão Mobile - Lista com indicadores */}
         <div className="md:hidden">
           <div className="glass-card rounded-xl overflow-hidden border border-white/5">
-            {/* Header Mobile integrado */}
-            <div className="grid grid-cols-3 gap-2 bg-white/[0.02] border-b border-slate-800 py-4 px-4">
+            {/* Header Mobile - MESMO design do desktop */}
+            <div className="grid grid-cols-3 gap-2 bg-white/[0.02] border-b border-slate-800 py-4 px-3">
               <div className="col-span-1">
-                <span className="text-slate-600 font-mono text-[8px] uppercase block">Módulo</span>
-                <span className="text-white font-display text-[10px] uppercase font-bold">Entrega</span>
+                <span className="text-slate-600 font-mono text-[8px] uppercase tracking-[0.2em] block">Módulo</span>
+                <span className="text-white font-display text-[9px] uppercase font-bold">Entrega Técnica</span>
               </div>
               <div className="text-center">
-                <span className="text-slate-500 font-mono text-[8px] uppercase block mb-0.5">Essential</span>
-                <span className="text-slate-300 font-display text-[10px] uppercase font-bold">Branding</span>
+                <span className="text-slate-500 font-mono text-[8px] uppercase tracking-[0.2em] block mb-0.5">Essential</span>
+                <span className="text-slate-300 font-display text-[9px] uppercase font-bold tracking-tighter">Digital Branding</span>
               </div>
-              <div className="text-center bg-primary/5 rounded-lg py-1 border border-primary/20">
+              <div className="text-center bg-primary/5 rounded-lg py-1.5 relative">
+                <div className="absolute top-0 inset-x-0 h-0.5 bg-primary"></div>
                 <Zap size={10} className="text-primary mx-auto mb-0.5 animate-pulse" />
-                <span className="text-primary font-mono text-[8px] uppercase block font-bold">Vello</span>
+                <span className="text-primary font-mono text-[7px] uppercase tracking-[0.2em] font-bold block">Ecossistema</span>
+                <span className="text-white font-display text-[9px] uppercase font-bold tracking-tighter">VELLO PLATFORM</span>
               </div>
             </div>
 
@@ -60,30 +62,31 @@ export const Comparison: React.FC = () => {
             {features.map((item, i) => (
               <div 
                 key={i} 
-                className={`grid grid-cols-3 gap-2 items-center px-4 py-3 ${i !== features.length - 1 ? 'border-b border-slate-800/50' : ''} hover:bg-white/[0.01] transition-colors`}
+                className={`grid grid-cols-3 gap-2 items-center px-3 py-3 ${i !== features.length - 1 ? 'border-b border-slate-800/50' : ''} hover:bg-white/[0.01] transition-colors group`}
               >
-                <div className="col-span-1">
-                  <span className="text-slate-300 text-xs font-medium leading-tight">{item.name}</span>
+                <div className="col-span-1 flex items-center gap-2">
+                  <div className="w-1 h-1 rounded-full bg-slate-800 group-hover:bg-primary transition-colors shrink-0"></div>
+                  <span className="text-slate-300 text-[10px] font-medium leading-tight tracking-tight group-hover:text-white transition-colors">{item.name}</span>
                 </div>
                 <div className="flex justify-center">
                   {item.basic ? (
-                    <div className="w-6 h-6 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-500">
-                      <Check size={12} strokeWidth={3} />
+                    <div className="w-6 h-6 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-500 group-hover:border-slate-700 transition-all">
+                      <Check size={11} strokeWidth={3} />
                     </div>
                   ) : (
                     <div className="text-slate-800">
-                      <Minus size={12} />
+                      <Minus size={11} />
                     </div>
                   )}
                 </div>
-                <div className="flex justify-center bg-primary/[0.02]">
+                <div className="flex justify-center bg-primary/[0.03] group-hover:bg-primary/[0.05] transition-colors -mx-2 px-2">
                   {item.pro ? (
-                    <div className="w-7 h-7 rounded-lg bg-primary text-white shadow-lg shadow-primary/20 flex items-center justify-center border border-primary/50">
-                      <Check size={14} strokeWidth={3} />
+                    <div className="w-7 h-7 rounded-lg bg-primary text-white shadow-lg shadow-primary/20 flex items-center justify-center border border-primary/50 group-hover:scale-110 transition-transform">
+                      <Check size={12} strokeWidth={3} />
                     </div>
                   ) : (
                     <div className="text-red-900/30">
-                      <Minus size={12} />
+                      <Minus size={11} />
                     </div>
                   )}
                 </div>
@@ -91,9 +94,9 @@ export const Comparison: React.FC = () => {
             ))}
 
             {/* Footer Mobile */}
-            <div className="px-4 py-4 bg-white/[0.02] border-t border-slate-800 flex items-center justify-center gap-2">
-              <ShieldCheck size={12} className="text-slate-600" />
-              <span className="text-[8px] font-mono text-slate-600 uppercase tracking-wider">Eagle v2.6</span>
+            <div className="px-3 py-4 bg-white/[0.02] border-t border-slate-800 flex items-center justify-center gap-2">
+              <ShieldCheck size={11} className="text-slate-600" />
+              <span className="text-[8px] font-mono text-slate-600 uppercase tracking-[0.15em]">Compliance Técnico Eagle v2.6</span>
             </div>
           </div>
         </div>
