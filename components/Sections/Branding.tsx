@@ -51,7 +51,7 @@ export const Branding: React.FC = () => {
                 IDENTIDADE VISUAL.<br />
                 <span className="text-primary">DO FUTURO DA INDÚSTRIA.</span>
               </h2>
-              <p className="text-slate-400 text-lg font-light leading-relaxed">
+              <p className="text-slate-400 text-base sm:text-lg font-light leading-relaxed">
                 Não é apenas um logotipo. Vamos construir um Sistema Visual Completo que transmite inovação, robustez e autoridade para a Feira.
               </p>
             </div>
