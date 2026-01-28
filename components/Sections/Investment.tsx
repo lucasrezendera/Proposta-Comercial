@@ -78,7 +78,7 @@ export const Investment: React.FC = () => {
                   size="lg"
                   className={`w-full py-4 sm:py-5 text-xs sm:text-sm font-mono tracking-wider sm:tracking-widest ${plan.highlight ? 'shadow-lg shadow-primary/20 hover:scale-[1.02]' : ''}`}
                   onClick={() => {
-                    window.open(`https://wa.me/?text=Olá, somos da AMPEI e gostaríamos de aprovar o plano ${plan.name}.`);
+                    window.open(`https://wa.me/5511936194197?text=Olá, somos da AMPEI e gostaríamos de aprovar o plano ${plan.name}.`);
                   }}
                 >
                   {plan.highlight ? 'APROVAR ECOSSISTEMA' : 'APROVAR BÁSICO'}
