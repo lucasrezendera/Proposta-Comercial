@@ -4,7 +4,7 @@ import { SectionId } from '../../types';
 
 export const Solution: React.FC = () => {
    return (
-      <section id={SectionId.SOLUTION} className="py-12 sm:py-16 bg-dark-900 relative overflow-hidden">
+      <section id={SectionId.SOLUTION} className="py-8 sm:py-12 bg-dark-900 relative overflow-hidden">
          <div className="container mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
             <div className="flex flex-col md:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left">
                <span className="text-primary text-xs sm:text-sm font-bold tracking-tighter">03 // 08</span>

@@ -16,7 +16,7 @@ export const Comparison: React.FC = () => {
   ];
 
   return (
-    <section id={SectionId.COMPARISON} className="py-12 sm:py-16 bg-dark-950 relative overflow-hidden">
+    <section id={SectionId.COMPARISON} className="py-8 sm:py-12 bg-dark-950 relative overflow-hidden">
       {/* Elementos decorativos de fundo */}
       <div className="hidden md:block absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none opacity-50"></div>
 
