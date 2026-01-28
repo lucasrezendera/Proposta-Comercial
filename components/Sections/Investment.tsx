@@ -81,7 +81,11 @@ export const Investment: React.FC = () => {
                     window.open(`https://wa.me/?text=Olá, somos da AMPEI e gostaríamos de aprovar o plano ${plan.name}.`);
                   }}
                 >
-                  {plan.highlight ? 'APROVAR ECOSSISTEMA' : 'APROVAR BÁSICO'}
+                  {plan.highlight ? (
+                    <>APROVAR<br />ECOSSISTEMA</>
+                  ) : (
+                    'APROVAR BÁSICO'
+                  )}
                   {plan.highlight && <ArrowRight className="ml-2 w-4 h-4" />}
                 </Button>
 
