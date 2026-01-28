@@ -29,14 +29,14 @@ export const Hero: React.FC = () => {
         <div className="relative mb-6 sm:mb-10 animate-fade-in-up text-center" style={{ animationDelay: '0.4s' }}>
           <h1 className="font-display flex flex-col items-center gap-2">
             <div className="flex flex-col md:flex-row items-center justify-center md:gap-x-4 leading-none">
-              <span className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-none">
+              <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-none">
                 FEIRA DAS
               </span>
-              <span className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase text-primary leading-none">
+              <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase text-primary leading-none">
                 INDÚSTRIAS
               </span>
             </div>
-            <span className="text-base sm:text-2xl md:text-4xl lg:text-5xl font-bold tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.5em] text-slate-500 uppercase">
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.5em] text-slate-500 uppercase">
               INDAIATUBA
             </span>
           </h1>
@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
 
         {/* Value Proposition */}
         <div className="max-w-3xl mx-auto space-y-4 sm:space-y-8 animate-fade-in-up text-center px-4" style={{ animationDelay: '0.6s' }}>
-          <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-slate-300 font-display leading-tight">
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-3xl text-slate-300 font-display leading-tight">
             Transforme o evento em um <br /><span className="text-white border-b-2 border-primary/40">ecossistema inteligente</span>.
           </p>
 
