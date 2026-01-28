@@ -66,12 +66,7 @@ export const Header: React.FC = () => {
 
           {/* Logo Section */}
           <div className="flex items-center gap-4">
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-full"></div>
-              <EagleLogo size={36} className="md:w-[42px] md:h-[42px] relative transition-transform group-hover:scale-110 duration-500" />
-            </div>
-
-            <div className="flex flex-col border-l border-slate-800/50 pl-4 h-10 justify-center">
+            <div className="flex flex-col h-10 justify-center">
               <div className="flex items-center gap-1.5">
                 <span className="font-display font-bold text-lg md:text-xl tracking-tighter text-white leading-none">
                   {COMPANY_NAME}<span className="text-primary">.</span>
