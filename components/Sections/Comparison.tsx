@@ -37,18 +37,34 @@ export const Comparison: React.FC = () => {
           </p>
         </div>
 
-        {/* Versão Mobile - Cards */}
-        <div className="md:hidden space-y-4">
-          {/* Card Essential */}
-          <div className="glass-card rounded-2xl overflow-hidden border border-slate-800">
-            <div className="bg-white/[0.02] px-5 py-4 border-b border-slate-800">
-              <span className="text-slate-500 font-mono text-[9px] uppercase tracking-[0.3em] block mb-1">Essential</span>
-              <span className="text-slate-300 font-display text-sm uppercase font-bold tracking-tighter">Digital Branding</span>
+        {/* Versão Mobile - Lista com indicadores */}
+        <div className="md:hidden space-y-3">
+          {/* Header Mobile */}
+          <div className="glass-card rounded-xl p-4 border border-white/5">
+            <div className="grid grid-cols-3 gap-2 text-center">
+              <div className="col-span-1"></div>
+              <div>
+                <span className="text-slate-500 font-mono text-[8px] uppercase block mb-1">Essential</span>
+                <span className="text-slate-300 font-display text-[10px] uppercase font-bold">Branding</span>
+              </div>
+              <div className="bg-primary/5 rounded-lg py-2 border border-primary/20">
+                <Zap size={10} className="text-primary mx-auto mb-1 animate-pulse" />
+                <span className="text-primary font-mono text-[8px] uppercase block font-bold">Vello</span>
+              </div>
             </div>
-            <div className="p-5 space-y-3">
-              {features.map((item, i) => (
-                <div key={i} className="flex items-center justify-between py-2">
-                  <span className="text-slate-300 text-xs font-medium">{item.name}</span>
+          </div>
+
+          {/* Features List Mobile */}
+          <div className="glass-card rounded-xl overflow-hidden border border-white/5">
+            {features.map((item, i) => (
+              <div 
+                key={i} 
+                className={`grid grid-cols-3 gap-2 items-center px-4 py-3 ${i !== features.length - 1 ? 'border-b border-slate-800/50' : ''}`}
+              >
+                <div className="col-span-1">
+                  <span className="text-slate-300 text-xs font-medium leading-tight">{item.name}</span>
+                </div>
+                <div className="flex justify-center">
                   {item.basic ? (
                     <div className="w-6 h-6 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-500">
                       <Check size={12} strokeWidth={3} />
@@ -59,24 +75,7 @@ export const Comparison: React.FC = () => {
                     </div>
                   )}
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Card Ecossistema */}
-          <div className="glass-card rounded-2xl overflow-hidden border border-primary/30">
-            <div className="bg-primary/5 px-5 py-4 border-b border-primary/20 relative">
-              <div className="absolute top-0 inset-x-0 h-1 bg-primary"></div>
-              <div className="flex items-center gap-2 mb-1">
-                <Zap size={12} className="text-primary animate-pulse" />
-                <span className="text-primary font-mono text-[9px] uppercase tracking-[0.3em] font-bold">Ecossistema</span>
-              </div>
-              <span className="text-white font-display text-sm uppercase font-bold tracking-tighter">VELLO PLATFORM</span>
-            </div>
-            <div className="p-5 space-y-3 bg-primary/[0.02]">
-              {features.map((item, i) => (
-                <div key={i} className="flex items-center justify-between py-2">
-                  <span className="text-slate-300 text-xs font-medium">{item.name}</span>
+                <div className="flex justify-center">
                   {item.pro ? (
                     <div className="w-7 h-7 rounded-lg bg-primary text-white shadow-lg shadow-primary/20 flex items-center justify-center border border-primary/50">
                       <Check size={14} strokeWidth={3} />
@@ -87,8 +86,8 @@ export const Comparison: React.FC = () => {
                     </div>
                   )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
 
