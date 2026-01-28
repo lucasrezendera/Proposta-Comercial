@@ -16,29 +16,84 @@ export const Comparison: React.FC = () => {
   ];
 
   return (
-    <section id={SectionId.COMPARISON} className="py-16 bg-dark-950 relative overflow-hidden">
+    <section id={SectionId.COMPARISON} className="py-12 sm:py-16 bg-dark-950 relative overflow-hidden">
       {/* Elementos decorativos de fundo */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none opacity-50"></div>
+      <div className="hidden md:block absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none opacity-50"></div>
 
-      <div className="container mx-auto max-w-6xl px-6 relative z-10">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
         {/* Padrão de cabeçalho de seção */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left">
-          <span className="text-primary text-sm font-bold tracking-tighter">06 // 08</span>
+        <div className="flex flex-col md:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left">
+          <span className="text-primary text-xs sm:text-sm font-bold tracking-tighter">06 // 08</span>
           <div className="h-px w-12 md:flex-1 bg-slate-800/50"></div>
-          <span className="text-slate-500 text-[10px] tracking-widest uppercase">Scope Matrix Comparison</span>
+          <span className="text-slate-500 text-[9px] sm:text-[10px] tracking-widest uppercase">Scope Matrix Comparison</span>
         </div>
 
-        <div className="text-center mb-10">
+        <div className="text-center mb-8 sm:mb-10">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 uppercase tracking-tighter">
             ESCOPO <span className="text-primary">GERAL</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto font-light text-base sm:text-lg leading-relaxed">
+          <p className="text-slate-400 max-w-2xl mx-auto font-light text-base sm:text-lg leading-relaxed px-4">
             Comparativo detalhado entre os modelos de entrega para a evolução digital da AMPEI.
           </p>
         </div>
 
-        {/* Tabela com visual Industrial/Moderno */}
-        <div className="relative max-w-5xl mx-auto">
+        {/* Versão Mobile - Cards */}
+        <div className="md:hidden space-y-4">
+          {/* Card Essential */}
+          <div className="glass-card rounded-2xl overflow-hidden border border-slate-800">
+            <div className="bg-white/[0.02] px-5 py-4 border-b border-slate-800">
+              <span className="text-slate-500 font-mono text-[9px] uppercase tracking-[0.3em] block mb-1">Essential</span>
+              <span className="text-slate-300 font-display text-sm uppercase font-bold tracking-tighter">Digital Branding</span>
+            </div>
+            <div className="p-5 space-y-3">
+              {features.map((item, i) => (
+                <div key={i} className="flex items-center justify-between py-2">
+                  <span className="text-slate-300 text-xs font-medium">{item.name}</span>
+                  {item.basic ? (
+                    <div className="w-6 h-6 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-500">
+                      <Check size={12} strokeWidth={3} />
+                    </div>
+                  ) : (
+                    <div className="text-slate-800">
+                      <Minus size={12} />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Card Ecossistema */}
+          <div className="glass-card rounded-2xl overflow-hidden border border-primary/30">
+            <div className="bg-primary/5 px-5 py-4 border-b border-primary/20 relative">
+              <div className="absolute top-0 inset-x-0 h-1 bg-primary"></div>
+              <div className="flex items-center gap-2 mb-1">
+                <Zap size={12} className="text-primary animate-pulse" />
+                <span className="text-primary font-mono text-[9px] uppercase tracking-[0.3em] font-bold">Ecossistema</span>
+              </div>
+              <span className="text-white font-display text-sm uppercase font-bold tracking-tighter">VELLO PLATFORM</span>
+            </div>
+            <div className="p-5 space-y-3 bg-primary/[0.02]">
+              {features.map((item, i) => (
+                <div key={i} className="flex items-center justify-between py-2">
+                  <span className="text-slate-300 text-xs font-medium">{item.name}</span>
+                  {item.pro ? (
+                    <div className="w-7 h-7 rounded-lg bg-primary text-white shadow-lg shadow-primary/20 flex items-center justify-center border border-primary/50">
+                      <Check size={14} strokeWidth={3} />
+                    </div>
+                  ) : (
+                    <div className="text-red-900/30">
+                      <Minus size={12} />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Versão Desktop - Tabela */}
+        <div className="hidden md:block relative max-w-5xl mx-auto">
           <div className="absolute -inset-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-3xl opacity-20 pointer-events-none"></div>
 
           <div className="glass-card rounded-3xl overflow-hidden border border-white/5 shadow-2xl">
@@ -118,8 +173,8 @@ export const Comparison: React.FC = () => {
         </div>
 
         {/* Legend / CTA Reforço */}
-        <div className="mt-10 text-center">
-          <p className="text-slate-500 text-xs font-mono uppercase tracking-widest max-w-xl mx-auto leading-relaxed">
+        <div className="mt-8 sm:mt-10 text-center">
+          <p className="text-slate-500 text-[10px] sm:text-xs font-mono uppercase tracking-widest max-w-xl mx-auto leading-relaxed px-4">
             * Todos os módulos do ecossistema vello são integrados de forma nativa via API proprietária.
           </p>
         </div>
