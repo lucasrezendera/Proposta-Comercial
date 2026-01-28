@@ -6,27 +6,26 @@ import { EagleLogo } from '../UI/EagleLogo';
 export const ProposalPdfTemplate: React.FC = () => {
   const today = new Date();
   const dateStr = today.toLocaleDateString('pt-BR');
-  
+
   const validityDate = new Date();
   validityDate.setDate(today.getDate() + 15);
   const validityStr = validityDate.toLocaleDateString('pt-BR');
 
   return (
     <div id="pdf-export-template" className="w-[794px] bg-[#020617] overflow-hidden">
-      
+
       {/* PÁGINA 01: CAPA PREMIUM REFINADA */}
-      <div 
+      <div
         className="relative w-full flex flex-col p-24 bg-[#020617] overflow-hidden justify-between"
-        style={{ 
-          height: '1120px', 
-          pageBreakAfter: 'always',
-          breakAfter: 'page',
-          margin: 0
+        style={{
+          height: '1122px',
+          margin: 0,
+          boxSizing: 'border-box'
         }}
       >
         {/* Elemento de Fundo Estático */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] border-r-[1px] border-t-[1px] border-primary/10 -mr-20 -mt-20 rounded-full"></div>
-        
+
         {/* Identidade Superior Simplificada e Alinhada */}
         <div className="relative z-10 flex items-center justify-between">
           <div className="flex items-center gap-4 -ml-4"> {/* Ajuste negativo para compensar o respiro interno do SVG da logo */}
@@ -46,12 +45,12 @@ export const ProposalPdfTemplate: React.FC = () => {
                 Documento Estratégico
               </span>
             </div>
-            
+
             <h1 className="text-white font-display text-8xl font-bold tracking-tighter uppercase leading-[0.85]">
-              PROPOSTA<br/>
+              PROPOSTA<br />
               <span className="text-primary">COMERCIAL</span>
             </h1>
-            
+
             <div className="h-1 w-24 bg-white/10 mt-8"></div>
           </div>
 
@@ -61,9 +60,9 @@ export const ProposalPdfTemplate: React.FC = () => {
               {CLIENT_NAME}
             </h2>
             <div className="flex items-center gap-4 text-slate-400 font-display text-2xl tracking-tight">
-               <span>Feira das Indústrias Indaiatuba</span>
-               <div className="w-2 h-2 bg-primary rounded-full"></div>
-               <span>2026</span>
+              <span>Feira das Indústrias Indaiatuba</span>
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span>2026</span>
             </div>
           </div>
         </div>
@@ -80,11 +79,11 @@ export const ProposalPdfTemplate: React.FC = () => {
               <p className="text-white font-bold text-xl">{validityStr}</p>
             </div>
           </div>
-          
+
           <div className="text-right space-y-3">
             <div className="inline-flex items-center justify-end gap-3 px-4 py-2 bg-slate-900/50 border border-slate-800 rounded-lg">
-               <Shield size={14} className="text-primary" />
-               <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Confidencial // Nível 01</span>
+              <Shield size={14} className="text-primary" />
+              <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Confidencial // Nível 01</span>
             </div>
             <p className="text-slate-600 font-mono text-[9px] font-bold tracking-[0.3em] uppercase">
               Ref: EAGLE-BI-2026-{CLIENT_NAME}
@@ -93,13 +92,18 @@ export const ProposalPdfTemplate: React.FC = () => {
         </div>
       </div>
 
-      {/* PÁGINA 02: CONTEÚDO ORIGINAL (Inalterado) */}
-      <div 
-        className="bg-[#020617] text-white p-12 w-[794px] min-h-[1122px] font-sans relative flex flex-col"
-        style={{ boxSizing: 'border-box', margin: 0 }}
+      {/* PÁGINA 02: CONTEÚDO ORIGINAL */}
+      <div
+        className="bg-[#020617] text-white p-10 w-[794px] overflow-hidden font-sans relative flex flex-col"
+        style={{
+          height: '1122px',
+          boxSizing: 'border-box',
+          margin: 0,
+          pageBreakAfter: 'avoid'
+        }}
       >
-        <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
 
         <div className="relative z-10 flex flex-col h-full flex-1">
           {/* Header */}
@@ -222,7 +226,7 @@ export const ProposalPdfTemplate: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="text-right">
               <div className="w-48 h-px bg-slate-800 mb-2 ml-auto"></div>
               <p className="text-[9px] font-mono text-slate-500 uppercase tracking-widest mb-1">Autorização Digital</p>

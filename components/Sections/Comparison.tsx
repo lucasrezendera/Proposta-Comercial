@@ -19,7 +19,7 @@ export const Comparison: React.FC = () => {
     <section id={SectionId.COMPARISON} className="py-16 bg-dark-950 relative overflow-hidden">
       {/* Elementos decorativos de fundo */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none opacity-50"></div>
-      
+
       <div className="container mx-auto max-w-6xl px-6 relative z-10">
         {/* Padrão de cabeçalho de seção */}
         <div className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left">
@@ -40,7 +40,7 @@ export const Comparison: React.FC = () => {
         {/* Tabela com visual Industrial/Moderno */}
         <div className="relative max-w-5xl mx-auto">
           <div className="absolute -inset-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-3xl opacity-20 pointer-events-none"></div>
-          
+
           <div className="glass-card rounded-3xl overflow-hidden border border-white/5 shadow-2xl">
             <table className="w-full border-collapse">
               <thead>
@@ -119,9 +119,9 @@ export const Comparison: React.FC = () => {
 
         {/* Legend / CTA Reforço */}
         <div className="mt-10 text-center">
-           <p className="text-slate-500 text-xs font-mono uppercase tracking-widest max-w-xl mx-auto leading-relaxed">
-             * Todos os módulos do ecossistema vello são integrados de forma nativa via API proprietária.
-           </p>
+          <p className="text-slate-500 text-xs font-mono uppercase tracking-widest max-w-xl mx-auto leading-relaxed">
+            * Todos os módulos do ecossistema vello são integrados de forma nativa via API proprietária.
+          </p>
         </div>
       </div>
     </section>

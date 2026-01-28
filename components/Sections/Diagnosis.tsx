@@ -34,48 +34,48 @@ export const Diagnosis: React.FC = () => {
                 { title: "IDENTIDADE DEFASADA", desc: "A marca atual não reflete a inovação da indústria. É preciso modernizar.", icon: "03" }
               ].map((item, i) => (
                 <div key={i} className="group glass-card p-5 rounded-2xl relative overflow-hidden">
-                   <div className="absolute top-0 right-0 p-4 text-slate-800 font-mono text-4xl font-bold opacity-20 group-hover:opacity-100 group-hover:text-primary transition-all pointer-events-none">
-                     {item.icon}
-                   </div>
-                   <h3 className="font-display font-bold text-white mb-1 flex items-center gap-3">
-                     <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                     {item.title}
-                   </h3>
-                   <p className="text-slate-400 text-sm max-w-[85%]">{item.desc}</p>
+                  <div className="absolute top-0 right-0 p-4 text-slate-800 font-mono text-4xl font-bold opacity-20 group-hover:opacity-100 group-hover:text-primary transition-all pointer-events-none">
+                    {item.icon}
+                  </div>
+                  <h3 className="font-display font-bold text-white mb-1 flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-400 text-sm max-w-[85%]">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="relative mt-8 md:mt-0">
-             <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
-             
-             <div className="relative glass p-8 rounded-[2rem] border border-white/5 flex flex-col items-center text-center gap-6 shadow-3xl">
-                <div className="w-20 h-20 glass-card rounded-2xl flex items-center justify-center border-primary/40 mb-1">
-                    <TrendingDown className="w-10 h-10 text-primary" />
-                </div>
-                
-                <div className="space-y-1">
-                  <div className="font-display text-7xl font-bold text-white tracking-tighter leading-none">
-                    -30%
-                  </div>
-                  <div className="text-primary font-mono font-bold uppercase tracking-[0.3em] text-xs">
-                    EFICIÊNCIA
-                  </div>
-                </div>
+            <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
+            <div className="relative glass p-8 rounded-[2rem] border border-white/5 flex flex-col items-center text-center gap-6 shadow-3xl">
+              <div className="w-20 h-20 glass-card rounded-2xl flex items-center justify-center border-primary/40 mb-1">
+                <TrendingDown className="w-10 h-10 text-primary" />
+              </div>
 
-                <p className="text-slate-400 text-sm max-w-xs leading-relaxed italic">
-                  "Custo invisível de processos manuais e falta de integração digital."
-                </p>
-
-                <div className="flex gap-2">
-                  <div className="w-1 h-1 bg-primary rounded-full"></div>
-                  <div className="w-1 h-1 bg-slate-700 rounded-full"></div>
-                  <div className="w-1 h-1 bg-slate-700 rounded-full"></div>
+              <div className="space-y-1">
+                <div className="font-display text-7xl font-bold text-white tracking-tighter leading-none">
+                  -30%
                 </div>
-             </div>
+                <div className="text-primary font-mono font-bold uppercase tracking-[0.3em] text-xs">
+                  EFICIÊNCIA
+                </div>
+              </div>
+
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
+
+              <p className="text-slate-400 text-sm max-w-xs leading-relaxed italic">
+                "Custo invisível de processos manuais e falta de integração digital."
+              </p>
+
+              <div className="flex gap-2">
+                <div className="w-1 h-1 bg-primary rounded-full"></div>
+                <div className="w-1 h-1 bg-slate-700 rounded-full"></div>
+                <div className="w-1 h-1 bg-slate-700 rounded-full"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

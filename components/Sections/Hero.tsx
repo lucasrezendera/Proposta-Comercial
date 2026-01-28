@@ -1,74 +1,87 @@
 import React from 'react';
-import { ChevronDown, Crown } from 'lucide-react';
+import { ChevronDown, Crown, Sparkles } from 'lucide-react';
 import { SectionId } from '../../types';
 
 export const Hero: React.FC = () => {
   return (
-    <section id={SectionId.HERO} className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Dynamic Background */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full animate-pulse-slow pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-orange-900/10 blur-[100px] rounded-full animate-pulse-slow pointer-events-none delay-1000" />
+    <section id={SectionId.HERO} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#020617]">
+      {/* Background Cinematográfico */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
 
-      {/* Main Content Container */}
-      <div className="container mx-auto max-w-6xl px-6 relative z-10 flex flex-col items-center text-center py-20">
-        
+      {/* Orbes de Luz Dinâmicos */}
+      <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full animate-pulse-slow pointer-events-none mix-blend-screen" />
+      <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-orange-600/10 blur-[100px] rounded-full animate-pulse-slow pointer-events-none delay-1000 mix-blend-screen" />
+
+      <div className="container mx-auto max-w-6xl px-6 relative z-10 flex flex-col items-center py-20">
+
         {/* Badge: Proposta Exclusiva */}
-        <div className="mb-10 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-          <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full glass-card border-primary/20 shadow-xl shadow-primary/5">
-            <Crown className="w-4 h-4 text-primary animate-pulse" />
-            <span className="text-slate-300 text-[11px] font-mono font-bold tracking-[0.3em] uppercase">
+        <div className="mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/5 bg-white/5 backdrop-blur-md">
+            <Crown size={12} className="text-primary" />
+            <span className="text-slate-400 text-[10px] font-mono font-bold tracking-[0.2em] uppercase">
               PROPOSTA EXCLUSIVA PARA: <span className="text-white">AMPEI</span>
             </span>
           </div>
         </div>
 
-        {/* Main Title Group */}
-        <div className="relative mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <h1 className="font-display flex flex-col gap-2 items-center">
-            <span className="text-4xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tighter uppercase">
-              FEIRA DAS
-            </span>
-            <span className="text-6xl md:text-9xl lg:text-[10rem] font-black leading-none tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-b from-primary via-orange-400 to-primaryDark text-glow">
-              INDÚSTRIAS
-            </span>
-            <span className="text-3xl md:text-6xl lg:text-7xl font-bold tracking-[0.5em] text-white opacity-40 uppercase -mt-2">
+        {/* Main Title Architecture */}
+        <div className="relative mb-10 animate-fade-in-up text-center" style={{ animationDelay: '0.4s' }}>
+          <h1 className="font-display flex flex-col items-center">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-x-4 leading-none">
+              <span className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-none">
+                FEIRA DAS
+              </span>
+              <span className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase text-primary leading-none">
+                INDÚSTRIAS
+              </span>
+            </div>
+            <span className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-[0.5em] text-slate-500 uppercase mt-2">
               INDAIATUBA
             </span>
           </h1>
         </div>
 
-        {/* Subtitles */}
-        <div className="max-w-3xl mx-auto space-y-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <p className="text-xl md:text-3xl text-white font-display font-medium leading-tight">
-            Transforme o evento em um <span className="text-primary underline decoration-primary/30 underline-offset-8">ecossistema inteligente</span>.
+        {/* Value Proposition */}
+        <div className="max-w-3xl mx-auto space-y-8 animate-fade-in-up text-center" style={{ animationDelay: '0.6s' }}>
+          <p className="text-xl md:text-3xl text-slate-300 font-display leading-tight">
+            Transforme o evento em um <span className="text-white border-b-2 border-primary/40">ecossistema inteligente</span>.
           </p>
-          <p className="text-base md:text-xl text-slate-400 font-mono tracking-wide uppercase">
-            Branding de Autoridade + Tecnologia de Gestão.
-          </p>
+
+          <div className="flex items-center justify-center gap-6 pt-2">
+            <span className="text-[10px] md:text-xs text-slate-500 font-mono tracking-widest uppercase">
+              Branding de Autoridade
+            </span>
+            <div className="w-1 h-1 bg-slate-800 rounded-full"></div>
+            <span className="text-[10px] md:text-xs text-slate-500 font-mono tracking-widest uppercase">
+              Tecnologia de Gestão
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center gap-2">
-         <span className="text-[10px] font-mono text-slate-600 uppercase tracking-widest mb-2">Scroll</span>
-         <button 
-           onClick={() => document.getElementById(SectionId.DIAGNOSIS)?.scrollIntoView({ behavior: 'smooth'})}
-           className="p-4 rounded-full border border-slate-800 text-slate-500 hover:text-primary hover:border-primary/50 transition-all glass"
-         >
-           <ChevronDown size={20} />
-         </button>
+      {/* Scroll Indicator Refinado */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center gap-4 group">
+        <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent opacity-50 group-hover:opacity-100 transition-opacity"></div>
+        <button
+          onClick={() => document.getElementById(SectionId.DIAGNOSIS)?.scrollIntoView({ behavior: 'smooth' })}
+          className="p-3 rounded-full border border-slate-800 text-slate-500 hover:text-white hover:border-primary transition-all glass-card group-hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
+        >
+          <ChevronDown size={18} />
+        </button>
       </div>
 
-      {/* Decorative Sidebar Numbers (Desktop Only) */}
-      <div className="hidden lg:flex absolute bottom-12 left-12 flex-col font-mono text-[10px] text-slate-700 tracking-[0.3em] uppercase">
-        <span className="text-primary font-bold">01 // EAGLE</span>
-        <span>PROPOSAL_2026</span>
+      {/* Metadados Laterais */}
+      <div className="hidden xl:flex absolute left-12 top-1/2 -translate-y-1/2 flex-col gap-20 [writing-mode:vertical-lr] rotate-180 items-center">
+        <span className="font-mono text-[9px] text-slate-700 tracking-[0.5em] uppercase font-bold">2026 // EDITION</span>
+        <div className="h-24 w-px bg-slate-800"></div>
+        <span className="font-mono text-[9px] text-primary tracking-[0.5em] uppercase font-bold">EAGLE DIGITAL HOUSE</span>
       </div>
-      
-      <div className="hidden lg:flex absolute bottom-12 right-12 flex-col font-mono text-[10px] text-slate-700 tracking-[0.3em] uppercase text-right">
-        <span>STRATEGIC_DOSSIER</span>
-        <span className="text-white">STRICTLY_CONFIDENTIAL</span>
+
+      <div className="hidden xl:flex absolute right-12 top-1/2 -translate-y-1/2 flex-col gap-20 [writing-mode:vertical-lr] items-center">
+        <span className="font-mono text-[9px] text-slate-700 tracking-[0.5em] uppercase font-bold">STRATEGIC DOSSIER</span>
+        <div className="h-24 w-px bg-slate-800"></div>
+        <span className="font-mono text-[9px] text-white tracking-[0.5em] uppercase font-bold">CONFIDENTIAL</span>
       </div>
     </section>
   );
