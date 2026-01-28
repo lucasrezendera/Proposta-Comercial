@@ -38,28 +38,29 @@ export const Comparison: React.FC = () => {
         </div>
 
         {/* Versão Mobile - Lista com indicadores */}
-        <div className="md:hidden space-y-3">
-          {/* Header Mobile */}
-          <div className="glass-card rounded-xl p-4 border border-white/5">
-            <div className="grid grid-cols-3 gap-2 text-center">
-              <div className="col-span-1"></div>
-              <div>
-                <span className="text-slate-500 font-mono text-[8px] uppercase block mb-1">Essential</span>
+        <div className="md:hidden">
+          <div className="glass-card rounded-xl overflow-hidden border border-white/5">
+            {/* Header Mobile integrado */}
+            <div className="grid grid-cols-3 gap-2 bg-white/[0.02] border-b border-slate-800 py-4 px-4">
+              <div className="col-span-1">
+                <span className="text-slate-600 font-mono text-[8px] uppercase block">Módulo</span>
+                <span className="text-white font-display text-[10px] uppercase font-bold">Entrega</span>
+              </div>
+              <div className="text-center">
+                <span className="text-slate-500 font-mono text-[8px] uppercase block mb-0.5">Essential</span>
                 <span className="text-slate-300 font-display text-[10px] uppercase font-bold">Branding</span>
               </div>
-              <div className="bg-primary/5 rounded-lg py-2 border border-primary/20">
-                <Zap size={10} className="text-primary mx-auto mb-1 animate-pulse" />
+              <div className="text-center bg-primary/5 rounded-lg py-1 border border-primary/20">
+                <Zap size={10} className="text-primary mx-auto mb-0.5 animate-pulse" />
                 <span className="text-primary font-mono text-[8px] uppercase block font-bold">Vello</span>
               </div>
             </div>
-          </div>
 
-          {/* Features List Mobile */}
-          <div className="glass-card rounded-xl overflow-hidden border border-white/5">
+            {/* Features List Mobile */}
             {features.map((item, i) => (
               <div 
                 key={i} 
-                className={`grid grid-cols-3 gap-2 items-center px-4 py-3 ${i !== features.length - 1 ? 'border-b border-slate-800/50' : ''}`}
+                className={`grid grid-cols-3 gap-2 items-center px-4 py-3 ${i !== features.length - 1 ? 'border-b border-slate-800/50' : ''} hover:bg-white/[0.01] transition-colors`}
               >
                 <div className="col-span-1">
                   <span className="text-slate-300 text-xs font-medium leading-tight">{item.name}</span>
@@ -75,7 +76,7 @@ export const Comparison: React.FC = () => {
                     </div>
                   )}
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-center bg-primary/[0.02]">
                   {item.pro ? (
                     <div className="w-7 h-7 rounded-lg bg-primary text-white shadow-lg shadow-primary/20 flex items-center justify-center border border-primary/50">
                       <Check size={14} strokeWidth={3} />
@@ -88,6 +89,12 @@ export const Comparison: React.FC = () => {
                 </div>
               </div>
             ))}
+
+            {/* Footer Mobile */}
+            <div className="px-4 py-4 bg-white/[0.02] border-t border-slate-800 flex items-center justify-center gap-2">
+              <ShieldCheck size={12} className="text-slate-600" />
+              <span className="text-[8px] font-mono text-slate-600 uppercase tracking-wider">Eagle v2.6</span>
+            </div>
           </div>
         </div>
 
