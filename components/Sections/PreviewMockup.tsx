@@ -16,7 +16,7 @@ export const PreviewMockup: React.FC = () => {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 uppercase tracking-tighter">
             PROPOSTA DE <span className="text-primary">INTERFACE</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto font-light">
+          <p className="text-slate-400 max-w-2xl mx-auto font-light text-base sm:text-lg">
             Uma imersão visual no futuro portal da FEIND, respeitando a sobriedade industrial com tecnologia de ponta.
           </p>
         </div>

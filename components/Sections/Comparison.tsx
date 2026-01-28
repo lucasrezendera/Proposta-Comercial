@@ -32,7 +32,7 @@ export const Comparison: React.FC = () => {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 uppercase tracking-tighter">
             ESCOPO <span className="text-primary">GERAL</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-slate-400 max-w-2xl mx-auto font-light text-base sm:text-lg leading-relaxed">
             Comparativo detalhado entre os modelos de entrega para a evolução digital da AMPEI.
           </p>
         </div>

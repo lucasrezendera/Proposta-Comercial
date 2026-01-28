@@ -19,7 +19,7 @@ export const Investment: React.FC = () => {
             A DECISÃO ESTRATÉGICA:<br />
             <span className="text-primary">INVESTIMENTO</span>
           </h2>
-          <p className="text-slate-400 font-light text-lg">
+          <p className="text-slate-400 font-light text-base sm:text-lg">
             Transparência total para o crescimento da AMPEI.
           </p>
         </div>
