@@ -25,7 +25,7 @@ export const Solution: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-12 grid-rows-auto md:grid-rows-2 gap-4 h-auto md:h-[650px]">
 
                {/* Card 1: Site (Main) */}
-               <div className="md:col-span-8 md:row-span-1 group relative glass-card rounded-2xl sm:rounded-[2rem] overflow-hidden p-6 sm:p-8 flex flex-col justify-between min-h-[280px]">
+               <div className="md:col-span-8 md:row-span-1 group relative glass-card rounded-2xl sm:rounded-[2rem] overflow-hidden p-5 sm:p-6 md:p-8 flex flex-col justify-between min-h-[220px] md:min-h-[280px]">
                   <div className="border-beam" style={{ "--duration": "3s" } as any} />
                   <div className="hidden md:block absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[80px] rounded-full pointer-events-none transition-all group-hover:bg-primary/10"></div>
                   <div className="relative z-10 flex flex-col h-full justify-between">
@@ -36,49 +36,49 @@ export const Solution: React.FC = () => {
                         <span className="text-[9px] sm:text-[10px] font-mono text-primary border border-primary/30 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full">CORE SYSTEM</span>
                      </div>
                      <div>
-                        <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-1 uppercase">WEB EXPERIENCE</h3>
-                        <span className="text-[10px] sm:text-xs font-mono text-primary uppercase tracking-widest mb-2 block">NEXT.JS PERFORMANCE</span>
+                        <h3 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 uppercase">WEB EXPERIENCE</h3>
+                        <span className="text-[10px] sm:text-xs font-mono text-primary uppercase tracking-widest mb-1.5 sm:mb-2 block">NEXT.JS PERFORMANCE</span>
                         <p className="text-slate-400 text-xs sm:text-sm max-w-md">Site institucional de alta conversão. Otimizado para SEO local e credenciamento antecipado.</p>
                      </div>
                   </div>
                </div>
 
                {/* Card 2: App */}
-               <div className="md:col-span-4 md:row-span-1 group relative glass-card rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between hover:bg-slate-900/50 min-h-[280px]">
+               <div className="md:col-span-4 md:row-span-1 group relative glass-card rounded-2xl sm:rounded-[2rem] p-5 sm:p-6 md:p-8 flex flex-col justify-between hover:bg-slate-900/50 min-h-[220px] md:min-h-[280px]">
                   <div className="border-beam" style={{ "--duration": "5s" } as any} />
                   <div className="w-10 h-10 sm:w-12 sm:h-12 glass rounded-xl sm:rounded-2xl flex items-center justify-center text-primary border-primary/20">
                      <Smartphone size={20} className="sm:w-6 sm:h-6" />
                   </div>
                   <div>
                      <h3 className="font-display text-lg sm:text-xl font-bold text-white mb-1 uppercase">APP NATIVO</h3>
-                     <span className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-widest mb-2 block">IOS + ANDROID</span>
+                     <span className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-widest mb-1.5 sm:mb-2 block">IOS + ANDROID</span>
                      <p className="text-slate-400 text-xs sm:text-sm">Guia de bolso do visitante: Agenda, Mapa, Networking e Push Notifications.</p>
                   </div>
                </div>
 
                {/* Card 3: Gestão */}
-               <div className="md:col-span-4 md:row-span-1 group relative glass-card rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between border-dashed border-slate-800 min-h-[280px]">
+               <div className="md:col-span-4 md:row-span-1 group relative glass-card rounded-2xl sm:rounded-[2rem] p-5 sm:p-6 md:p-8 flex flex-col justify-between border-dashed border-slate-800 min-h-[220px] md:min-h-[280px]">
                   <div className="border-beam" style={{ "--duration": "4s" } as any} />
                   <div className="w-10 h-10 sm:w-12 sm:h-12 glass rounded-xl sm:rounded-2xl flex items-center justify-center text-primary border-primary/20">
                      <BarChart3 size={20} className="sm:w-6 sm:h-6" />
                   </div>
                   <div>
                      <h3 className="font-display text-lg sm:text-xl font-bold text-white mb-1 uppercase">GESTÃO TOTAL</h3>
-                     <span className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-widest mb-2 block">DASHBOARD VELLO</span>
+                     <span className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-widest mb-1.5 sm:mb-2 block">DASHBOARD VELLO</span>
                      <p className="text-slate-400 text-xs sm:text-sm">Controle financeiro em tempo real. Mapa de stands interativo (SVG) para reservas online.</p>
                   </div>
                </div>
 
                {/* Card 4: Marca */}
-               <div className="md:col-span-8 md:row-span-1 group relative glass-card rounded-2xl sm:rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between overflow-hidden min-h-[280px]">
+               <div className="md:col-span-8 md:row-span-1 group relative glass-card rounded-2xl sm:rounded-[2rem] p-5 sm:p-6 md:p-8 flex flex-col justify-between overflow-hidden min-h-[220px] md:min-h-[280px]">
                   <div className="border-beam" style={{ "--duration": "7s" } as any} />
                   <div className="hidden md:block absolute -bottom-10 -right-10 w-48 h-48 bg-white/5 blur-[50px] rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors"></div>
                   <div className="w-10 h-10 sm:w-12 sm:h-12 glass rounded-xl sm:rounded-2xl flex items-center justify-center text-primary border-primary/20">
                      <Palette size={20} className="sm:w-6 sm:h-6" />
                   </div>
                   <div>
-                     <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-1 uppercase">IDENTIDADE VISUAL</h3>
-                     <span className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-widest mb-2 block">REBRANDING 2026</span>
+                     <h3 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 uppercase">IDENTIDADE VISUAL</h3>
+                     <span className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-widest mb-1.5 sm:mb-2 block">REBRANDING 2026</span>
                      <p className="text-slate-400 text-xs sm:text-sm max-w-sm">Uma nova marca sólida e inovadora. Design System completo, manual e materiais de apoio.</p>
                   </div>
                </div>
