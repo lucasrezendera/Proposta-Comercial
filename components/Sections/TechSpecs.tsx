@@ -21,7 +21,7 @@ export const TechSpecs: React.FC = () => {
                   TECNOLOGIA EXCLUSIVA
                 </div>
               </div>
-              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight UPPERCASE px-4 lg:px-0">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 leading-tight UPPERCASE px-4 lg:px-0">
                 Não é apenas um site.<br />
                 É uma <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-200">Plataforma Next.js</span>.
               </h2>

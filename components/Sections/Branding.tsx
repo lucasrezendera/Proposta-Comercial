@@ -47,7 +47,7 @@ export const Branding: React.FC = () => {
                 <Maximize size={12} className="text-primary" />
                 DESIGN ESTRATÉGICO
               </div>
-              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight UPPERCASE">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight UPPERCASE">
                 IDENTIDADE VISUAL.<br />
                 <span className="text-primary">DO FUTURO DA INDÚSTRIA.</span>
               </h2>
