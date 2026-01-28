@@ -19,7 +19,7 @@ export const Results: React.FC = () => {
             <div className="flex flex-col lg:flex-row gap-16 items-center">
                 <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
                     <div>
-                        <div className="text-primary font-mono text-xs mb-2 tracking-widest">> PROJECTION_ANALYSIS</div>
+                        <div className="text-primary font-mono text-xs mb-2 tracking-widest">&gt; PROJECTION_ANALYSIS</div>
                         <h2 className="font-display text-5xl md:text-6xl font-bold text-white tracking-tight UPPERCASE">
                             CURVA DE <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-200">CRESCIMENTO</span>
                         </h2>
