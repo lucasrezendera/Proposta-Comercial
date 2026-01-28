@@ -4,10 +4,10 @@ import { Layers, Palette, Grid, Maximize, FileText } from 'lucide-react';
 
 export const Branding: React.FC = () => {
   return (
-    <section id={SectionId.BRANDING} className="py-16 bg-dark-900 relative overflow-hidden">
-      <div className="container mx-auto max-w-6xl px-6 relative z-10">
-        <div className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left">
-          <span className="text-primary text-sm font-bold tracking-tighter">05 // 08</span>
+    <section id={SectionId.BRANDING} className="py-12 sm:py-16 bg-dark-900 relative overflow-hidden">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col md:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left">
+          <span className="text-primary text-xs sm:text-sm font-bold tracking-tighter">05 // 08</span>
           <div className="h-px w-12 md:flex-1 bg-slate-800"></div>
           <span className="text-slate-500 text-[10px] tracking-widest uppercase">Direção Criativa & Design</span>
         </div>
