@@ -33,15 +33,15 @@ export const Diagnosis: React.FC = () => {
                 { title: "EXPERIÊNCIA LIMITADA", desc: "Sem app oficial, o visitante se perde e o expositor perde oportunidades de conexão.", icon: "02" },
                 { title: "IDENTIDADE DEFASADA", desc: "A marca atual não reflete a inovação da indústria. É preciso modernizar.", icon: "03" }
               ].map((item, i) => (
-                <div key={i} className="group glass-card p-4 sm:p-5 rounded-xl sm:rounded-2xl relative overflow-hidden">
+                <div key={i} className="group glass-card p-4 sm:p-5 rounded-xl sm:rounded-2xl relative overflow-hidden text-center md:text-left">
                   <div className="absolute top-0 right-0 p-3 sm:p-4 text-slate-800 font-mono text-3xl sm:text-4xl font-bold opacity-20 group-hover:opacity-100 group-hover:text-primary transition-all pointer-events-none">
                     {item.icon}
                   </div>
-                  <h3 className="font-display font-bold text-white text-sm sm:text-base mb-1 flex items-center gap-2 sm:gap-3">
+                  <h3 className="font-display font-bold text-white text-sm sm:text-base mb-1 flex items-center justify-center md:justify-start gap-2 sm:gap-3">
                     <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
                     {item.title}
                   </h3>
-                  <p className="text-slate-400 text-xs sm:text-sm max-w-[85%]">{item.desc}</p>
+                  <p className="text-slate-400 text-xs sm:text-sm max-w-[85%] mx-auto md:mx-0">{item.desc}</p>
                 </div>
               ))}
             </div>
