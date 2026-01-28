@@ -6,7 +6,7 @@ export const TechSpecs: React.FC = () => {
   return (
     <section id={SectionId.TECH_SPECS} className="py-12 sm:py-16 bg-dark-950 border-y border-white/5 relative overflow-hidden">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-col md:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left">
+        <div className="flex flex-col md:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 items-center md:items-center font-mono justify-center md:justify-start text-center md:text-left">
           <span className="text-primary text-xs sm:text-sm font-bold tracking-tighter">04 // 08</span>
           <div className="h-px w-12 md:flex-1 bg-slate-800"></div>
           <span className="text-slate-500 text-[9px] sm:text-[10px] tracking-widest uppercase">Tecnologia & Escalabilidade</span>
