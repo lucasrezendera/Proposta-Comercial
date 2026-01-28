@@ -19,7 +19,7 @@ export const Diagnosis: React.FC = () => {
                 <Activity size={12} className="sm:w-[14px] sm:h-[14px]" />
                 Scanning Status: Vulnerabilidades Detectadas
               </div>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] uppercase">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] uppercase">
                 O GARGALO <span className="text-primary">ATUAL</span>
               </h2>
               <p className="text-slate-400 leading-relaxed md:border-l-2 md:border-primary/20 md:pl-6 text-base sm:text-lg font-light pt-3 sm:pt-4 md:pt-0 border-t-2 border-primary/20 md:border-t-0">

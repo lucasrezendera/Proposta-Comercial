@@ -13,7 +13,7 @@ export const Solution: React.FC = () => {
             </div>
 
             <div className="mb-6 sm:mb-8 text-center">
-               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 tracking-tighter UPPERCASE">
+               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 tracking-tighter UPPERCASE">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">ECOSSISTEMA</span> VELLO
                </h2>
                <p className="text-slate-400 max-w-2xl text-base sm:text-lg font-light mx-auto px-4">

@@ -13,7 +13,7 @@ export const PreviewMockup: React.FC = () => {
         </div>
 
         <div className="text-center mb-10">
-          <h2 className="font-display text-5xl md:text-6xl font-bold text-white mb-4 uppercase tracking-tighter">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 uppercase tracking-tighter">
             PROPOSTA DE <span className="text-primary">INTERFACE</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto font-light">
